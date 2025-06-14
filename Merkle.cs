@@ -19,6 +19,11 @@ public static class CryptoUtils
         byte[] combined = tagHash.Concat(tagHash).Concat(msg).ToArray();
         return Sha256(combined);
     }
+
+    public static string ToHex(byte[] bytes)
+    {
+        return BitConverter.ToString(bytes).Replace("-", "").ToLowerInvariant();
+    }
 }
 
 
